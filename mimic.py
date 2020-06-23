@@ -54,28 +54,8 @@ def create_mimic_dict(filename):
         else:
             mimic_dict[prev].append(word)
             prev = word
-    print(mimic_dict)
+    # print(mimic_dict)
     return mimic_dict
-    # previous_word = ''
-    # with open(filename) as f:
-    #     text = f.read().split()
-    # for line in text:
-    #     if previous_word not in word_dict:
-    #         # word_dict[previous_word] = [line]
-    #         word_dict[previous_word] = 1
-    #     else:
-    #         # word_dict[previous_word].append(line)
-    #         previous_word = line
-    #         word_dict[previous_word] += 1
-    # print(word_dict)
-    # return word_dict
-
-
-    #             for word in word_dict:
-    #             word_dict[word] += word + ' : '
-    # return word_dict
-
-
 
 def print_mimic(mimic_dict, start_word):
     """Given a previously created mimic_dict and start_word,
@@ -86,7 +66,7 @@ def print_mimic(mimic_dict, start_word):
         - Repeat this process 200 times
     """
     for _ in range(200):
-        print(start_word)
+        print(start_word, end=' ')
         nexts = mimic_dict.get(start_word)
         if not nexts:
             nexts = mimic_dict['']
